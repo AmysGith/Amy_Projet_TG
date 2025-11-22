@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS Sommet CASCADE;
 
 CREATE TABLE Sommet (
     IdSommet SERIAL PRIMARY KEY,
-    NomSommet CHAR(5) NOT NULL
+    NomSommet CHAR(1) NOT NULL
 );
 
 CREATE TABLE Arete (
@@ -23,9 +23,9 @@ INSERT INTO Sommet (NomSommet) VALUES
 ('D');
 
 INSERT INTO Arete (ptD, ptA, Distance, Contrainte) VALUES
-(1, 2, 2, 7),
+(1, 2, 2, 0),
 (1, 3, 5, 0),
-(2, 1, 2, 7),
+(2, 1, 2, 0),
 (2, 3, 1, 0),
 (2, 4, 4, 0),
 (3, 1, 5, 0),
@@ -33,3 +33,5 @@ INSERT INTO Arete (ptD, ptA, Distance, Contrainte) VALUES
 (3, 4, 2, 0),
 (4, 2, 4, 0),
 (4, 3, 2, 0);
+
+

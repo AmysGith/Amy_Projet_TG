@@ -21,11 +21,12 @@ class Sommet:
 
 
 class Arete:
-    def __init__(self, id_arete=None, distance=None, ptD=None, ptA=None):
+    def __init__(self, id_arete=None, distance=None, ptD=None, ptA=None, contrainte=0):
         self.__id_arete = id_arete
         self.__distance = distance
         self.__ptD = ptD
         self.__ptA = ptA
+        self.__contrainte = contrainte
 
     @property
     def id_arete(self):
@@ -58,6 +59,14 @@ class Arete:
     @ptA.setter
     def ptA(self, value):
         self.__ptA = value
+
+    @property
+    def contrainte(self):
+        return self.__contrainte
+
+    @contrainte.setter
+    def contrainte(self, value):
+        self.__contrainte = value
 
 
 class Contrainte:
