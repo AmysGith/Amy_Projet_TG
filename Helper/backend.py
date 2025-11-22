@@ -28,7 +28,6 @@ def Coloriage(graph):
     couleurs = ["rouge", "bleu", "vert", "jaune", "violet", "orange", "rose", "cyan"]
     color_assignment = {}
 
-    # trier par degré décroissant
     for node in sorted(graph, key=lambda x: degres[x], reverse=True):
         voisins = graph[node]
         couleurs_voisins = {color_assignment[v] for v in voisins if v in color_assignment}

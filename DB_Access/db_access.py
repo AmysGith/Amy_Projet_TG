@@ -8,9 +8,9 @@ class DBAccess:
                 host=host, database=database, user=user, password=password
             )
             self.cursor = self.conn.cursor()
-            print("✓ Connexion réussie")
+            print("Connexion réussie")
         except Exception as e:
-            print(f"✗ Erreur : {e}")
+            print(f"Erreur : {e}")
             self.conn = None
             self.cursor = None
 
