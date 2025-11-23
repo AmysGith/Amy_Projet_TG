@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisation de Graphe - Dijkstra</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Barre de navigation en haut -->
+        <div class="top-bar">
+            <button class="btn btn-primary" id="colorizeBtn">Colorier (jours/équipes)</button>
+            <div class="dropdown">
+                <button class="btn btn-secondary" id="sourceBtn">
+                    Source <span class="arrow">▼</span>
+                </button>
+                <div class="dropdown-content" id="sourceDropdown">
+                    <!-- Les nœuds seront chargés dynamiquement -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary" id="destBtn">
+                    Destination <span class="arrow">▼</span>
+                </button>
+                <div class="dropdown-content" id="destDropdown">
+                    <!-- Les nœuds seront chargés dynamiquement -->
+                </div>
+            </div>
+            <button class="btn btn-primary" id="dijkstraBtn">Dijkstra</button>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="main-content">
+            <!-- Zone de visualisation du graphe -->
+            <div class="graph-container">
+                <svg id="graphSvg" viewBox="0 0 800 600">
+                    <!-- Arêtes du graphe (générées dynamiquement) - NON ORIENTÉ -->
+                    <g id="edges"></g>
+
+                    <!-- Labels des poids sur les arêtes (générés dynamiquement) -->
+                    <g id="edge-labels"></g>
+
+                    <!-- Nœuds du graphe (générés dynamiquement) -->
+                    <g id="nodes"></g>
+                </svg>
+            </div>
+
+            <!-- Panneau latéral droit -->
+            <div class="sidebar">
+                <!-- Légende -->
+                <div class="legend-section">
+                    <div id="legendItems">
+                        <!-- Les éléments de légende seront générés dynamiquement -->
+                    </div>
+                </div>
+
+                <!-- Ajouter une contrainte -->
+                <div class="constraint-section">
+                    <h3>Ajouter une contrainte</h3>
+                    <div class="constraint-form">
+                        <div class="form-group">
+                            <label>De:</label>
+                            <select id="constraintFrom" class="form-select">
+                                <option value="">Sélectionner...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>À:</label>
+                            <select id="constraintTo" class="form-select">
+                                <option value="">Sélectionner...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Valeur:</label>
+                            <input type="number" id="constraintValue" class="form-input" value="1" min="0">
+                        </div>
+                        <button class="btn btn-primary btn-small" id="addConstraintBtn">Ajouter contrainte</button>
+                    </div>
+                </div>
+
+                <!-- Résultats -->
+                <div class="results-section">
+                    <h3>Résultats</h3>
+                    <div id="pathResult">
+                        <p class="result-label">Chemin:</p>
+                        <p class="result-value" id="pathValue">-</p>
+                    </div>
+                    <div id="distanceResult">
+                        <p class="result-label">Distance:</p>
+                        <p class="result-value" id="distanceValue">-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

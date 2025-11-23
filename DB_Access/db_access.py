@@ -28,4 +28,4 @@ class DBAccess:
     def close(self):
         if self.cursor: self.cursor.close()
         if self.conn: self.conn.close()
-        print("✓ Connexion fermée")
+        print("Connexion fermée")
